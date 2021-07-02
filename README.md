@@ -23,26 +23,7 @@ mkdir terraform1
 vi main.tf
 ```
 
-
-Proveedor y aprovicionador 
-
-### Inicializar 
-```
-terraform init
-```
-### Planificar
-```
-terraform plan
-```
-### Aplicar 
-```
-terraform apply
-```
-### Destruir 
-```
-terraform destroy
-```
-
+https://registry.terraform.io/browse/providers
 ```
 terraform {
   required_providers {
@@ -67,9 +48,30 @@ resource "docker_container" "ubuntu" {
   image = "ubuntu:18.04"
   name = "ubuntu1"
   command = ["/bin/bash","-c","while true; do sleepp 60000; done"]
-  provisioner "local-exec"{
-    command = "echo ${docker_container.ubuntu.network_data[0].ip_address} >> inventario.txt"
-    }
+#  provisioner "local-exec"{
+#    command = "echo ${docker_container.ubuntu.network_data[0].ip_address} >> inventario.txt"
+#    }
     
 }
+```
+
+
+
+Proveedor y aprovicionador 
+
+### Inicializar 
+```
+terraform init
+```
+### Planificar
+```
+terraform plan
+```
+### Aplicar 
+```
+terraform apply
+```
+### Destruir 
+```
+terraform destroy
 ```
